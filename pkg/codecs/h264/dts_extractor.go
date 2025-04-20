@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	maxReorderedFrames = 10
+	maxReorderedFrames = 100
 	/*
 		(max_size(first_mb_in_slice) + max_size(slice_type) + max_size(pic_parameter_set_id) +
 		max_size(frame_num) + max_size(pic_order_cnt_lsb)) * 4 / 3 =
