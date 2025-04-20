@@ -236,11 +236,6 @@ func (d *DTSExtractor) Extract(au [][]byte, pts int64) (int64, error) {
 		return 0, fmt.Errorf("DTS is greater than PTS")
 	}
 
-	if d.prevDTSFilled && dts < d.prevDTS {
-		return 0, fmt.Errorf("DTS is not monotonically increasing, was %v, now is %v",
-			d.prevDTS, dts)
-	}
-
 	d.prevDTS = dts
 	d.prevDTSFilled = true
 
